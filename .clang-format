@@ -1,0 +1,20 @@
+# Measured with clang-format 19 against this tree on 2026-10-23: a 100-column
+# limit changes 200 of 3,398 C++/CUDA lines, 80 columns changes 650. Existing
+# files are deliberately not reformatted. Format the lines you touch:
+#
+#     git-clang-format --diff        # preview
+#     git-clang-format               # apply to staged changes
+#
+# Use clang-format 19.
+BasedOnStyle: Google
+IndentWidth: 4
+ColumnLimit: 100
+PointerAlignment: Left
+DerivePointerAlignment: false
+AccessModifierOffset: -4
+AllowShortFunctionsOnASingleLine: Inline
+
+# Keep each file's grouping: own header first, then first-party, platform and
+# CUDA, then the standard library. Re-sorting scrambles it.
+IncludeBlocks: Preserve
+SortIncludes: Never

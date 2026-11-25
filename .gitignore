@@ -1,0 +1,48 @@
+# CMake and local build trees
+/build/
+/build-*/
+/cmake-build-*/
+CMakeCache.txt
+CMakeFiles/
+CTestTestfile.cmake
+Makefile
+compile_commands.json
+
+# Tool and editor state
+__pycache__/
+*.py[co]
+.cache/
+.clangd/
+.vscode/
+.idea/
+
+# Generated profiling and benchmark output
+/benchmarks/results/
+/benchmarks/profiles/
+
+# Local tools and contributor instructions
+.ai/
+.claude/
+.codex/
+.private/
+AGENTS.md
+
+# Local credentials
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+
+# Python packaging and test output
+/dist/
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+/integrations/vllm/plugin/build/
+/integrations/vllm/control_plugin/build/
+
+# Generated run data
+/results/
+*.sqlite
+*.sqlite-*

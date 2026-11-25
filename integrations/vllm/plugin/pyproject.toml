@@ -1,0 +1,25 @@
+# ECLAIR - Emulation and Compatibility Layer for Accelerated Inference and Rendering
+# Copyright (C) 2026 FixCraft Inc.
+# Licensed under the GNU Affero General Public License v3.0 or later.
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "eclair-vllm"
+version = "0.4.1"
+description = "Opt-in Eclair plugin for vLLM 0.32.0 on sm_70"
+license = "AGPL-3.0-or-later"
+license-files = ["LICENSE"]
+requires-python = ">=3.11"
+dependencies = []
+
+[project.entry-points."vllm.general_plugins"]
+eclair_ct_sm70 = "eclair_vllm:register"
+
+[tool.setuptools]
+packages = ["eclair_vllm"]
+
+[tool.setuptools.package-data]
+# install_plugin.py stages Eclair's native kernel library here; the source tree holds none.
+eclair_vllm = ["libeclair_kernels.so"]

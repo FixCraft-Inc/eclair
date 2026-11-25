@@ -1,0 +1,21 @@
+# ECLAIR - Emulation and Compatibility Layer for Accelerated Inference and Rendering
+# Copyright (C) 2026 FixCraft Inc.
+# Licensed under the GNU Affero General Public License v3.0 or later.
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "eclair-vllm-control"
+version = "0.1.0"
+description = "Opt-in authenticated idle-only prefix-cache reset for vLLM 0.32.0"
+license = "AGPL-3.0-or-later"
+license-files = ["LICENSE"]
+requires-python = ">=3.11"
+dependencies = []
+
+[project.entry-points."vllm.endpoint_plugins"]
+eclair_cache_control = "eclair_vllm_control:CacheControl"
+
+[tool.setuptools]
+packages = ["eclair_vllm_control"]
