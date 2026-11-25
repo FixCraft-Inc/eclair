@@ -137,8 +137,7 @@ With the 64 MiB budget, the effective throughput was 0.964 TFLOP/s at
 M=16 and 6.242 TFLOP/s at M=128. Peak deltas count live PyTorch tensor
 allocations above the resident inputs. Allocator reserves and cuBLAS
 workspaces are outside that metric. P95 is the maximum of nine samples.
-The original registration's benchmark used source revision
-`633f239310d62c5ff0d2f7db6076ee07a6d12f4850b6549b03e83e08723dd7d4`.
+The original registration's benchmark ran on an earlier development revision.
 
 ## Operators-only application integration
 
@@ -182,8 +181,7 @@ reference.
 
 ### Contract 3 evidence (2026-10-24 UTC)
 
-Tesla PG500-216, R580.196.07, torch 2.7.1+cu126, Eclair Release archives from
-source sync `69d5687377fbcab813a6a118589275be063d27b2d2664119cb212703b89697f6`
+Tesla PG500-216, R580.196.07, torch 2.7.1+cu126, Eclair Release archives
 (CUDA 12.9.86, GCC 12.2), adapter compiled with g++ 14.2. The W8A16 suite passed all six tests. The scaled-matmul suite passed all
 six tests with both 64 MiB and zero weight workspace.
 

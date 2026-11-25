@@ -63,8 +63,8 @@ The vLLM plugin can fall back to the existing framework operation.
 
 V100/Tesla PG500-216, driver 580.196.07, CUDA 12.9.86, GCC 12.2, explicit
 sm_70. CMake Debug, CUDA C++17 with `-g` and no device `-G` or fast math.
-Focused host/CUDA tests first passed at source `c42244ea...`; the tensor-core
-source `8a0148c6...` passes them plus the last item below. The CUDA test uses
+Focused host/CUDA tests passed before the tensor-core path was added, and
+the tensor-core version passes them plus the last item below. The CUDA test uses
 a nondefault stream and synchronizes before downloads:
 
 - All 65536 binary16 scale patterns, all 16 unsigned nibbles and every M=1..4.

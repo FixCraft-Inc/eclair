@@ -100,9 +100,8 @@ scalar paths, with tails and misaligned views, and check for stray stores.
 
 On 2026-10-24 the GPU tests passed bit-exact on the V100 (Tesla PG500-216,
 `sm_70`, driver 580.196.07, CUDA 12.9.86, GCC 12.2 in the Debian 12 build
-root), in Debug and Release builds of source sync `fde40414ff50...`. The
-laptop's RTX 3050 Ti (`sm_86`, CUDA 13.4) passed the same tests as a generic
-check.
+root), in Debug and Release builds. An RTX 3050 Ti laptop GPU (`sm_86`,
+CUDA 13.4) passed the same tests as a generic check.
 
 ## Conversion bandwidth on the V100
 

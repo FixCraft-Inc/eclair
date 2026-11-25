@@ -10,7 +10,7 @@ This file records questions to answer with primary sources, experiments, and cod
 
 Primary references to investigate include the NVIDIA Tesla V100 architecture whitepaper, CUDA C++ Programming Guide, CUDA Math API, PTX ISA documentation, and the CUDA compiler release notes.
 
-The current setup recommendation is recorded in [DEBIAN_V100.md](DEBIAN_V100.md). It intentionally favors a conservative CUDA 12.x and proprietary-driver envelope until the workhorse is installed and tested.
+The current setup recommendation is recorded in [DEBIAN_V100.md](DEBIAN_V100.md). It favors a conservative CUDA 12.x and proprietary-driver setup.
 
 ## Numerical compatibility
 
@@ -29,11 +29,11 @@ Reference material includes the IEEE floating-point standard, the OCP 8-bit floa
 
 ## Originality and provenance
 
-The project may later study public behavior and algorithms, including the Volta FP8 compatibility project named in the kickoff. That work must remain research only until explicitly authorized, and any later analysis must distinguish public ideas from protected source implementation. No source from that project is included in this repository.
+Eclair may study the public behavior and algorithms of other Volta FP8 projects. Any such analysis must separate public ideas from protected source code. No source from those projects is included in this repository.
 
-## Initial local reference review (2026-10-11)
+## Lessons from an existing vLLM FP8 build for Volta (2026-10-11)
 
-After the foundation was drafted, the local checkout at `~/vllm-fp8-w8a16-sm70` was reviewed at the documentation, history, and file-layout level. This was an observational review; no files were copied into Eclair and no third-party implementation was treated as an Eclair contract.
+An existing vLLM FP8 W8A16 project for `sm_70` was reviewed at the documentation, history, and file-layout level. No files were copied into Eclair, and no third-party implementation was treated as an Eclair contract.
 
 The reference confirms several architectural constraints that Eclair should keep explicit:
 
@@ -43,6 +43,6 @@ The reference confirms several architectural constraints that Eclair should keep
 - The reference documents CUDA 12.x and source builds targeting `sm_70` as deployment constraints. CUDA 13 and newer native FP8 assumptions must remain outside the initial V100 support envelope until independently verified.
 - Its benchmark and test artifacts show why Eclair needs per-shape correctness gates, explicit baselines, CUDA-graph state, and memory measurements. Those results belong to that project and are not Eclair benchmark claims.
 
-The reference contains deliberately vendored third-party TurboMind/LMDeploy material with Apache-2.0 provenance. Eclair will not import that source during the kickoff. If a later task authorizes comparative implementation research, record exact versions, licenses, file provenance, and independent design decisions before any dependency is considered.
+The reference contains deliberately vendored third-party TurboMind/LMDeploy material with Apache-2.0 provenance. Eclair does not import that source. Before any comparative implementation work, record exact versions, licenses, file provenance, and independent design decisions.
 
-As an engineering example, the reference is strong in measured kernel experiments, per-format/backend gates, fallback coverage, exactness checks, and benchmark records. Its implementation is not a suitable Eclair base: it is tied to vLLM release internals, Python monkey patches, environment-variable policy, JIT extension loading, and deliberately vendored third-party code. Eclair should reuse the evidence and contract ideas while keeping its C++/CUDA runtime independent.
+As an engineering example, the reference is strong in measured kernel experiments, per-format/backend gates, fallback coverage, exactness checks, and benchmark records. Its implementation is not a suitable Eclair base because it is tied to vLLM release internals, Python monkey patches, environment-variable policy, JIT extension loading, and deliberately vendored third-party code. Eclair should reuse the evidence and contract ideas while keeping its C++/CUDA runtime independent.

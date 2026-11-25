@@ -120,7 +120,7 @@ one power and a missing warp reduction made it fail (29 and 93 failed checks).
 
 On 2026-10-24 Debug and Release CTest passed 21/21 on the V100 (Tesla
 PG500-216, sm_70, driver 580.196.07, CUDA 12.9.86, GCC 12.2 in the Debian 12
-build root) at source sync `2e029ef1d7e9...`. An RTX 3050 Ti (sm_86,
+build root). An RTX 3050 Ti (sm_86,
 CUDA 13.4) passed the same suite as a generic check.
 
 ## Performance on the V100 (2026-10-24)
@@ -164,7 +164,7 @@ FP16 weights need no conversion. M=1..4 now uses one warp per output channel,
 scalar loads. M>=5 keeps WMMA. No numerical contract or BF16 row-scaling
 rule changes. The tensor-core alignment probe explicitly uses five rows.
 
-V100 focused CTest 4/4 at source content `43bc22d1...`: host/CUDA BF16 linear
+V100 focused CTest passed 4/4: host/CUDA BF16 linear
 and Gated DeltaNet output. Skinny coverage adds all 65536 binary16 patterns
 on both load paths for every M=1..4, zero shifts, sentinels and irregular
 shapes, in addition to the existing FP64 tests with nonzero shifts.

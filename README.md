@@ -8,7 +8,7 @@ the standard NVIDIA driver and CUDA runtime.
 ## Try it
 
 Build the CPU reference and run the capability CLI. This needs a C++20
-compiler and CMake 3.24 or newer.
+compiler, CMake 3.24 or newer, and Python 3 for the test suite.
 
 ```sh
 cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
@@ -73,7 +73,9 @@ buffers and framework allocations. [Cache layout and supported shapes](docs/PAGE
 
 [Benchmark methodology](docs/BENCHMARKS.md) lists the measurement commands and
 baselines. See the [architecture](docs/ARCHITECTURE.md) and
-[contributor guide](CONTRIBUTING.md) for library boundaries and tests.
+[contributor guide](CONTRIBUTING.md) for library boundaries and tests, and the
+[roadmap](docs/ROADMAP.md) and [open research questions](docs/RESEARCH.md)
+for planned work.
 
 ## The name
 

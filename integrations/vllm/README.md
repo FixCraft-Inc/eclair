@@ -15,8 +15,9 @@ expects the build root at `/var/lib/eclair-build-envs/debian12` and CUDA at
 `/usr/local/cuda-12.9`. Use a Python 3.11–3.14 installation that runs
 inside that root and a build virtual environment with CMake 3.26.1 or newer,
 Ninja and `torch==2.13.0+cu126`. Keep the interpreter, virtual environment,
-CUTLASS checkout, source and build output under `/home`. Run the build as
-an unprivileged user.
+CUTLASS checkout, source and build output under `/home`, because the
+bubblewrap sandbox mounts an empty `/home` and binds only those paths into
+it. Run the build as an unprivileged user.
 
 Prepare the official vLLM 0.32.0 source archive. The patcher checks its
 SHA-256 and requires a new output directory. It carries excerpts from the
