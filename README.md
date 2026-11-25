@@ -75,6 +75,13 @@ buffers and framework allocations. [Cache layout and supported shapes](docs/PAGE
 baselines. See the [architecture](docs/ARCHITECTURE.md) and
 [contributor guide](CONTRIBUTING.md) for library boundaries and tests.
 
+## The name
+
+In French, *éclair* means “lightning.” It is also the name of a pastry with a
+shell, filling, and glaze. Those layers fit a compatibility library. The
+lightning nods to speed and to Nikola Tesla, the namesake of Eclair's first
+GPU target, the NVIDIA Tesla V100.
+
 ## License
 
 Eclair is licensed under the [GNU Affero General Public License v3.0 or later](LICENSE).
